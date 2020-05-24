@@ -13,7 +13,7 @@ chardet==3.0.4
 Click==7.0
 clickclick==1.2.2
 configparser==3.7.4
-connexion==2018.0.dev1
+connexion==2.7.0
 constantly==15.1.0
 cryptography==2.6.1
 cssutils==1.0.2
