@@ -4,6 +4,7 @@ import sys
 import hashlib
 import os
 import shutil
+import re
 
 def DoesListContainsQuestion(question, list):
     for q in list:
@@ -73,6 +74,7 @@ for f in files:
             for answer in question.find_all(class_=["r0", "r1"]):
                 answerObj = {}
                 answerObj["text"] = answer.text.replace(u"\u03c6", "PHI")
+                answerObj["text"] = re.sub(r'^[abcdefg]. ', '', answerObj["text"])
                 answersText.append(answerObj["text"])
 
                 if "checked" in answer.input.attrs:
@@ -133,6 +135,7 @@ for f in files:
             for answer in question.find_all(class_=["r0", "r1"]):
                 answerObj = {}
                 answerObj["text"] = answer.text.replace(u"\u03c6", "PHI")
+                answerObj["text"] = re.sub(r'^[abcdefg]. ', '', answerObj["text"])
                 answersText.append(answerObj["text"])
 
                 answerObj["correct"] = False
